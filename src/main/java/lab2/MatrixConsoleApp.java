@@ -49,11 +49,6 @@ public class MatrixConsoleApp extends JFrame {
         exceptionLabel.setBounds(27, 150, 400, 23);
         contentPane.add(exceptionLabel);
 
-        JTextField exceptionField = new JTextField();
-        exceptionField.setBounds(27, 173, 500, 23);
-        exceptionField.setColumns(500);
-        contentPane.add(exceptionField);
-
         JLabel pathToOutputFileLabel = new JLabel("Путь к файлу с результатами:");
         pathToOutputFileLabel.setBounds(27, 200, 400, 23);
         contentPane.add(pathToOutputFileLabel);
@@ -146,7 +141,6 @@ public class MatrixConsoleApp extends JFrame {
                 rotated180DevidedField.setText("");
                 rotated270Field.setText("");
                 rotated270DevidedField.setText("");
-                exceptionField.setText("");
 
                 MatrixCalculation matrixCalculation = new MatrixCalculation(contentPane);
                 int matrixSize = matrixCalculation.readMatrixSize(pathToInputFile);
@@ -179,6 +173,7 @@ public class MatrixConsoleApp extends JFrame {
                         matrixCalculation.devideElementsMatrix(matrix_270), pathToOutputFile,
                         "Поворот на 270 градусов и деление на сумму соседни\n",
                         append));
+                matrixCalculation.clearException();
             }
             setVisible(true);
         });

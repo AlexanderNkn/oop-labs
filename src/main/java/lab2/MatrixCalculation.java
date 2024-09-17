@@ -171,4 +171,9 @@ public class MatrixCalculation {
         exceptionField.setEditable(false);
         contentPane.add(exceptionField);
     }
+
+    public void clearException() {
+        this.exception = " ";
+        this.displayException();
+    }
 }
