@@ -7,9 +7,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-public class MethodsConsoleApplication extends JFrame {
+public class MethodsConsoleApp extends JFrame {
 
-    public MethodsConsoleApplication() {
+    public MethodsConsoleApp() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 700, 550);
         JPanel contentPane = new JPanel();
@@ -40,8 +40,8 @@ public class MethodsConsoleApplication extends JFrame {
         btnGetMethod.addActionListener(arg0 -> {
             if(arg0.getSource() == btnGetMethod) {
                 for (Method method : Animal.class.getDeclaredMethods()) {
-                    if (method.isAnnotationPresent(RepeatCall.class)) {
-                        RepeatCall annotation = method.getAnnotation(RepeatCall.class);
+                    if (method.isAnnotationPresent(RepeatCallAnnotation.class)) {
+                        RepeatCallAnnotation annotation = method.getAnnotation(RepeatCallAnnotation.class);
                         method.setAccessible(true);
                         int modifiers = method.getModifiers();
                         boolean isPrivateOrProtected = Modifier.isPrivate(modifiers) || Modifier.isProtected(modifiers);
@@ -79,7 +79,7 @@ public class MethodsConsoleApplication extends JFrame {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                MethodsConsoleApplication frame = new MethodsConsoleApplication();
+                MethodsConsoleApp frame = new MethodsConsoleApp();
                 frame.setVisible(true);
             } catch (Exception e) {
                 e.printStackTrace();

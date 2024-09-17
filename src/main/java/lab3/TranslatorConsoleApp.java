@@ -7,13 +7,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.IOException;
 
-public class TranslatorConsoleApplication extends JFrame {
+public class TranslatorConsoleApp extends JFrame {
     private String pathToDictionaryFile;
     private String pathToTextFile;
 
     private String exception;
 
-    public TranslatorConsoleApplication() {
+    public TranslatorConsoleApp() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 1000, 1000);
         JPanel contentPane = new JPanel();
@@ -37,7 +37,7 @@ public class TranslatorConsoleApplication extends JFrame {
         JFileChooser pathDictionaryFileChooser = new JFileChooser("./src/main/data/lab3/");
         btnSelectDictionaryFile.addActionListener(e -> {
             pathDictionaryFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            int result = pathDictionaryFileChooser.showOpenDialog(TranslatorConsoleApplication.this);
+            int result = pathDictionaryFileChooser.showOpenDialog(TranslatorConsoleApp.this);
             if (result == JFileChooser.APPROVE_OPTION) {
                 pathToDictionaryFileField.setText(String.valueOf(pathDictionaryFileChooser.getSelectedFile()));
                 pathToDictionaryFile = pathToDictionaryFileField.getText();
@@ -61,7 +61,7 @@ public class TranslatorConsoleApplication extends JFrame {
         JFileChooser pathTextFileChooser = new JFileChooser("./src/main/data/lab3/");
         btnSelectTextFile.addActionListener(e -> {
             pathTextFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-            int result = pathTextFileChooser.showOpenDialog(TranslatorConsoleApplication.this);
+            int result = pathTextFileChooser.showOpenDialog(TranslatorConsoleApp.this);
             if (result == JFileChooser.APPROVE_OPTION) {
                 pathToTextFileField.setText(String.valueOf(pathTextFileChooser.getSelectedFile()));
                 pathToTextFile = pathToTextFileField.getText();
@@ -127,7 +127,7 @@ public class TranslatorConsoleApplication extends JFrame {
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
             try {
-                TranslatorConsoleApplication frame = new TranslatorConsoleApplication();
+                TranslatorConsoleApp frame = new TranslatorConsoleApp();
                 frame.setVisible(true);
             } catch (Exception e) {
                 e.printStackTrace();
