@@ -107,7 +107,7 @@ public class MainApp extends JFrame{
 
         JButton btnExit = new JButton("Выход");
         btnExit.addActionListener(e -> System.exit(0));
-        btnExit.setBounds(202, 570, 75, 30);
+        btnExit.setBounds(182, 570, 95, 30);
         contentPane.add(btnExit);
     }
 
